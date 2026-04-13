@@ -1,210 +1,482 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="it" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SitoVetrina.it | Sito Professionale in 7 Giorni*</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="container nav-wrapper">
-            <a href="#" class="brand">SitoVetrina.it</a>
-            <nav class="nav-links">
-                <a href="#funziona">Come funziona</a>
-                <a href="#include">Cosa include</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contatti">Contatti</a>
-            </nav>
-            <a href="#contatti" class="btn btn-volt nav-cta">Voglio il mio sito →</a>
-        </div>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: "#12100e",
+              sand: "#f2ede4",
+              volt: "#c8f040",
+              rust: "#c4461a",
+              mid: "#6b6560",
+            },
+            fontFamily: {
+              heading: ["Syne", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/css">
+      .section-fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .section-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details summary::after {
+        content: "+";
+        font-size: 1.5rem;
+      }
+      details[open] summary::after {
+        content: "−";
+      }
+    </style>
+  </head>
+  <body class="bg-dark text-white font-body overflow-x-hidden">
+    <header
+      class="sticky top-0 z-50 bg-dark/95 backdrop-blur-md border-b border-white/10 py-4"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="#" class="font-heading font-extrabold text-xl tracking-tight"
+          >Ows</a
+        >
+        <nav class="hidden md:flex gap-8 items-center text-sm font-medium">
+          <a href="#funziona" class="hover:text-volt transition-colors"
+            >Come funziona</a
+          >
+          <a href="#include" class="hover:text-volt transition-colors"
+            >Cosa include</a
+          >
+          <a href="#faq" class="hover:text-volt transition-colors">FAQ</a>
+          <a href="#contatti" class="hover:text-volt transition-colors"
+            >Contatti</a
+          >
+        </nav>
+        <a
+          href="#contatti"
+          class="bg-volt text-dark font-heading font-bold px-6 py-3 text-sm hover:bg-white transition-all transform hover:-translate-y-0.5"
+          >Voglio il mio sito →</a
+        >
+      </div>
     </header>
 
     <main>
-        <!-- HERO -->
-        <section class="hero dark-bg">
-            <div class="container grid-2">
-                <div class="hero-content">
-                    <span class="eyebrow">SITO ONLINE IN 7 GIORNI*</span>
-                    <h1>Smettila di rimandare. Il tuo sito professionale esiste già, manca solo di essere costruito.</h1>
-                    <p class="subtext">€1.500 fissi (pagamento in due rate da €750, una all'inizio e una alla consegna). Un processo accelerato dall'AI, guidato dalla visione di una UX designer e una sviluppatrice per eliminare ogni errore.</p>
-                    <div class="hero-actions">
-                        <a href="#contatti" class="btn btn-volt">Partiamo adesso →</a>
-                        <a href="#funziona" class="btn btn-ghost">Vedi come funziona ↓</a>
-                    </div>
-                </div>
-                <div class="hero-visual" id="hero-geo"></div>
+      <!-- HERO -->
+      <section class="min-h-[80vh] flex items-center py-20 section-fade">
+        <div
+          class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+        >
+          <div>
+            <span
+              class="text-volt font-heading font-bold text-xs tracking-[0.2em] block mb-4"
+              >SITO ONLINE IN 7 GIORNI*</span
+            >
+            <h1
+              class="font-heading font-extrabold text-4xl lg:text-6xl leading-tight mb-8"
+            >
+              Smettila di rimandare. Il tuo sito professionale esiste già, manca
+              solo di essere costruito.
+            </h1>
+            <p class="text-mid text-lg lg:text-xl mb-10 max-w-xl">
+              €1.500 fissi (pagamento in due rate da €750, una all'inizio e una
+              alla consegna). Un processo accelerato dall'AI, guidato dalla
+              visione di una UX designer e una sviluppatrice per eliminare ogni
+              errore.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contatti"
+                class="bg-volt text-dark font-heading font-bold px-8 py-4 text-center hover:bg-white transition-all transform hover:-translate-y-1"
+                >Partiamo adesso →</a
+              >
+              <a
+                href="#funziona"
+                class="border-2 border-white text-white font-heading font-bold px-8 py-4 text-center hover:bg-white hover:text-dark transition-all"
+                >Vedi come funziona ↓</a
+              >
             </div>
-        </section>
+          </div>
+          <div class="hidden md:block" id="hero-geo"></div>
+        </div>
+      </section>
 
-        <!-- CREDIBILITY BAR -->
-        <section class="credibility sand-bg">
-            <div class="container">
-                <h2 class="section-title-small">Fatto bene. Consegnato veloce.</h2>
-                <div class="stat-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">7 giorni*</span>
-                        <p>dalla raccolta dati alla consegna</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">€1.500</span>
-                        <p>2 rate da €750, nessun extra nascosto</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">1 revisione</span>
-                        <p>inclusa, senza discussioni</p>
-                    </div>
-                </div>
-                <p class="section-footnote">*7 giorni garantiti se il cliente ha foto e contenuti pronti.</p>
+      <!-- CREDIBILITY BAR -->
+      <section class="bg-sand text-dark py-24 section-fade">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="font-heading font-extrabold text-2xl opacity-70 mb-12">
+            Fatto bene. Consegnato veloce.
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-dark p-10 border-l-4 border-volt text-white">
+              <span
+                class="font-heading font-extrabold text-4xl text-volt block mb-2"
+                >7 giorni*</span
+              >
+              <p class="opacity-80">dalla raccolta dati alla consegna</p>
             </div>
-        </section>
+            <div class="bg-dark p-10 border-l-4 border-volt text-white">
+              <span
+                class="font-heading font-extrabold text-4xl text-volt block mb-2"
+                >€1.500</span
+              >
+              <p class="opacity-80">2 rate da €750, nessun extra nascosto</p>
+            </div>
+            <div class="bg-dark p-10 border-l-4 border-volt text-white">
+              <span
+                class="font-heading font-extrabold text-4xl text-volt block mb-2"
+                >1 revisione</span
+              >
+              <p class="opacity-80">inclusa, senza discussioni</p>
+            </div>
+          </div>
+          <p class="text-sm italic opacity-60 mt-8">
+            *7 giorni garantiti se il cliente ha foto e contenuti pronti.
+          </p>
+        </div>
+      </section>
 
-        <!-- COME FUNZIONA -->
-        <section id="funziona" class="how-it-works dark-bg">
-            <div class="container">
-                <h2 class="section-title">Quattro passi. Niente caos.</h2>
-                <div class="steps-grid">
-                    <div class="step">
-                        <span class="step-num">1</span>
-                        <h3>Brief (giorno 1)</h3>
-                        <p>Compili un modulo guidato. 20 minuti, tutto online.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">2</span>
-                        <h3>Design (giorni 2,3)</h3>
-                        <p>Richiesta e raccolta contenuti, struttura UX e copy.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">3</span>
-                        <h3>Sviluppo (giorni 4,6)</h3>
-                        <p>Caricamento contenuti e codice personalizzato via AI.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">4</span>
-                        <h3>Consegna (giorno 7)</h3>
-                        <p>Sei online. Dominio, hosting e istruzioni inclusi.</p>
-                    </div>
-                </div>
+      <!-- COME FUNZIONA -->
+      <section id="funziona" class="bg-dark py-24 section-fade">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="font-heading font-extrabold text-4xl lg:text-5xl mb-16">
+            Quattro passi. Niente caos.
+          </h2>
+          <div class="grid md:grid-cols-4 gap-12">
+            <div>
+              <span
+                class="font-heading font-extrabold text-7xl text-volt/30 block leading-none mb-4"
+                >1</span
+              >
+              <h3 class="font-heading font-extrabold text-lg mb-4 uppercase">
+                Brief (giorno 1)
+              </h3>
+              <p class="text-sm text-white/80 leading-relaxed">
+                Compili un modulo guidato. 20 minuti, tutto online.
+              </p>
             </div>
-        </section>
+            <div>
+              <span
+                class="font-heading font-extrabold text-7xl text-volt/30 block leading-none mb-4"
+                >2</span
+              >
+              <h3 class="font-heading font-extrabold text-lg mb-4 uppercase">
+                Design (giorni 2,3)
+              </h3>
+              <p class="text-sm text-white/80 leading-relaxed">
+                Richiesta e raccolta contenuti, struttura UX e copy.
+              </p>
+            </div>
+            <div>
+              <span
+                class="font-heading font-extrabold text-7xl text-volt/30 block leading-none mb-4"
+                >3</span
+              >
+              <h3 class="font-heading font-extrabold text-lg mb-4 uppercase">
+                Sviluppo (giorni 4,6)
+              </h3>
+              <p class="text-sm text-white/80 leading-relaxed">
+                Caricamento contenuti e codice personalizzato via AI.
+              </p>
+            </div>
+            <div>
+              <span
+                class="font-heading font-extrabold text-7xl text-volt/30 block leading-none mb-4"
+                >4</span
+              >
+              <h3 class="font-heading font-extrabold text-lg mb-4 uppercase">
+                Consegna (giorno 7)
+              </h3>
+              <p class="text-sm text-white/80 leading-relaxed">
+                Sei online. Dominio, hosting e istruzioni inclusi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- COSA INCLUDE -->
-        <section id="include" class="include sand-bg">
-            <div class="container">
-                <h2 class="section-title">€1.500. Tutto incluso. Davvero.</h2>
-                <div class="scope-grid">
-                    <div class="scope-box in-scope">
-                        <h3>Nel pacchetto</h3>
-                        <ul class="check-list">
-                            <li><i data-lucide="check" class="volt-icon"></i> Brief guidato (modulo strutturato)</li>
-                            <li><i data-lucide="check" class="volt-icon"></i> Progettazione UX di struttura e contenuti</li>
-                            <li><i data-lucide="check" class="volt-icon"></i> Testi ottimizzati SEO (title, meta, H1, body)</li>
-                            <li><i data-lucide="check" class="volt-icon"></i> Sviluppo in codice (no page builder, no WordPress)</li>
-                            <li><i data-lucide="check" class="volt-icon"></i> 1 ciclo di revisione incluso</li>
-                            <li><i data-lucide="check" class="volt-icon"></i> Configurazione dominio e hosting (primo anno)</li>
-                        </ul>
-                    </div>
-                    <div class="scope-box out-scope">
-                        <h3>Fuori scope (preventivo a parte)</h3>
-                        <ul class="cross-list">
-                            <li>– Logo e identità visiva</li>
-                            <li>– Fotografia professionale</li>
-                            <li>– E-commerce e funzionalità avanzate</li>
-                            <li>– Contenuti ricorrenti e gestione social</li>
-                            <li>– Manutenzione annuale con la sviluppatrice</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cta-center">
-                    <a href="#contatti" class="btn btn-rust">Richiedi il preventivo →</a>
-                </div>
+      <!-- COSA INCLUDE -->
+      <section id="include" class="bg-sand text-dark py-24 section-fade">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="font-heading font-extrabold text-4xl lg:text-5xl mb-16">
+            €1.500. Tutto incluso. Davvero.
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-10 border border-dark/10">
+              <h3 class="font-heading font-extrabold text-xl mb-8 uppercase">
+                Nel pacchetto
+              </h3>
+              <ul class="space-y-4">
+                <li
+                  class="flex items-start gap-3 font-medium text-sm lg:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
+                  ></i>
+                  Brief guidato (modulo strutturato)
+                </li>
+                <li
+                  class="flex items-start gap-3 font-medium text-sm lg:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
+                  ></i>
+                  Progettazione UX di struttura e contenuti
+                </li>
+                <li
+                  class="flex items-start gap-3 font-medium text-sm lg:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
+                  ></i>
+                  Testi ottimizzati SEO (title, meta, H1, body)
+                </li>
+                <li
+                  class="flex items-start gap-3 font-medium text-sm lg:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
+                  ></i>
+                  Sviluppo in codice (no page builder, no WordPress)
+                </li>
+                <li
+                  class="flex items-start gap-3 font-medium text-sm lg:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
+                  ></i>
+                  1 ciclo di revisione incluso
+                </li>
+                <li
+                  class="flex items-start gap-3 font-medium text-sm lg:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
+                  ></i>
+                  Configurazione dominio e hosting (primo anno)
+                </li>
+              </ul>
             </div>
-        </section>
+            <div class="bg-dark/5 p-10 border border-dark/10">
+              <h3 class="font-heading font-extrabold text-xl mb-8 uppercase">
+                Fuori scope (preventivo a parte)
+              </h3>
+              <ul class="space-y-4">
+                <li class="text-sm lg:text-base font-medium opacity-60 px-2">
+                  – Logo e identità visiva
+                </li>
+                <li class="text-sm lg:text-base font-medium opacity-60 px-2">
+                  – Fotografia professionale
+                </li>
+                <li class="text-sm lg:text-base font-medium opacity-60 px-2">
+                  – E-commerce e funzionalità avanzate
+                </li>
+                <li class="text-sm lg:text-base font-medium opacity-60 px-2">
+                  – Contenuti ricorrenti e gestione social
+                </li>
+                <li class="text-sm lg:text-base font-medium opacity-60 px-2">
+                  – Manutenzione annuale con la sviluppatrice
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center">
+            <a
+              href="#contatti"
+              class="bg-rust text-white font-heading font-bold px-10 py-5 inline-block hover:scale-105 transition-transform"
+              >Richiedi il preventivo →</a
+            >
+          </div>
+        </div>
+      </section>
 
-        <!-- PER CHI È -->
-        <section class="target dark-bg">
-            <div class="container">
-                <h2 class="section-title">Questo servizio è per te se...</h2>
-                <div class="target-grid">
-                    <div class="target-card">
-                        <h3>Sei un freelance</h3>
-                        <p>Hai bisogno di un portfolio o una pagina servizi che converta. Non un blog. Un sito che lavora per te.</p>
-                    </div>
-                    <div class="target-card">
-                        <h3>Hai una piccola impresa</h3>
-                        <p>Ristorante, studio, artigiano, negozio. Il tuo lavoro merita una vetrina digitale seria.</p>
-                    </div>
-                    <div class="target-card">
-                        <h3>Sei stufo dei template</h3>
-                        <p>Canva e Wix ti hanno stancato. Vuoi qualcosa che sembri fatto da professionisti, perché lo è.</p>
-                    </div>
-                </div>
+      <!-- PER CHI È -->
+      <section class="bg-dark py-24 section-fade">
+        <div class="max-w-7xl mx-auto px-6">
+          <h2 class="font-heading font-extrabold text-4xl mb-16">
+            Questo servizio è per te se...
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="border-2 border-volt p-10">
+              <h3
+                class="font-heading font-extrabold text-volt text-xl mb-6 uppercase"
+              >
+                Sei un freelance
+              </h3>
+              <p class="leading-relaxed opacity-80">
+                Hai bisogno di un portfolio o una pagina servizi che converta.
+                Non un blog. Un sito che lavora per te.
+              </p>
             </div>
-        </section>
+            <div class="border-2 border-volt p-10">
+              <h3
+                class="font-heading font-extrabold text-volt text-xl mb-6 uppercase"
+              >
+                Hai una piccola impresa
+              </h3>
+              <p class="leading-relaxed opacity-80">
+                Ristorante, studio, artigiano, negozio. Il tuo lavoro merita una
+                vetrina digitale seria.
+              </p>
+            </div>
+            <div class="border-2 border-volt p-10">
+              <h3
+                class="font-heading font-extrabold text-volt text-xl mb-6 uppercase"
+              >
+                Sei stufo dei template
+              </h3>
+              <p class="leading-relaxed opacity-80">
+                Canva e Wix ti hanno stancato. Vuoi qualcosa che sembri fatto da
+                professionisti, perché lo è.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- FAQ -->
-        <section id="faq" class="faq sand-bg">
-            <div class="container narrow">
-                <h2 class="section-title">Hai dubbi? Normale.</h2>
-                <div class="accordion">
-                    <details open>
-                        <summary>Quanto ci vuole davvero?</summary>
-                        <div class="faq-content">
-                            <p>7 giorni lavorativi dal brief completo, a patto che foto e testi siano già pronti. Se mancano materiali, i tempi si allungano, ma te lo diciamo subito.</p>
-                        </div>
-                    </details>
-                    <details>
-                        <summary>E se non ho il logo?</summary>
-                        <div class="faq-content">
-                            <p>Nessun problema. Puoi partire con un logotipo tipografico incluso. Il logo come identità visiva è quotato a parte.</p>
-                        </div>
-                    </details>
-                    <details>
-                        <summary>Il prezzo è veramente fisso?</summary>
-                        <div class="faq-content">
-                            <p>Sì. €1.500 per il pacchetto standard, pagabili in due rate da €750 (una all'inizio e una alla consegna). Funzionalità extra vengono preventivate prima di iniziare, nessuna sorpresa in fattura.</p>
-                        </div>
-                    </details>
-                    <details>
-                        <summary>Posso modificare il sito da solo dopo?</summary>
-                        <div class="faq-content">
-                            <p>No. Il sito è consegnato come prodotto finito ad alte prestazioni. È pensato per professionisti che non vogliono perdere tempo con aggiornamenti tecnici e preferiscono un oggetto solido e definitivo.</p>
-                        </div>
-                    </details>
-                    <details>
-                        <summary>Come comunichiamo durante il progetto?</summary>
-                        <div class="faq-content">
-                            <p>Via e-mail e documento condiviso. Tutto tracciato per iscritto. Nessuna call obbligatoria.</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
+      <!-- FAQ -->
+      <section id="faq" class="bg-sand text-dark py-24 section-fade">
+        <div class="max-w-3xl mx-auto px-6">
+          <h2 class="font-heading font-extrabold text-4xl mb-12">
+            Hai dubbi? Normale.
+          </h2>
+          <div class="space-y-0">
+            <details class="group border-b border-dark/10 py-6" open>
+              <summary
+                class="flex justify-between items-center font-heading font-bold text-lg lg:text-xl cursor-pointer list-none"
+              >
+                Quanto ci vuole davvero?
+              </summary>
+              <div class="mt-4 opacity-80 text-sm lg:text-base">
+                <p>
+                  7 giorni lavorativi dal brief completo, a patto che foto e
+                  testi siano già pronti. Se mancano materiali, i tempi si
+                  allungano, ma te lo diciamo subito.
+                </p>
+              </div>
+            </details>
+            <details class="group border-b border-dark/10 py-6">
+              <summary
+                class="flex justify-between items-center font-heading font-bold text-lg lg:text-xl cursor-pointer list-none"
+              >
+                E se non ho il logo?
+              </summary>
+              <div class="mt-4 opacity-80 text-sm lg:text-base">
+                <p>
+                  Nessun problema. Puoi partire con un logotipo tipografico
+                  incluso. Il logo come identità visiva è quotato a parte.
+                </p>
+              </div>
+            </details>
+            <details class="group border-b border-dark/10 py-6">
+              <summary
+                class="flex justify-between items-center font-heading font-bold text-lg lg:text-xl cursor-pointer list-none"
+              >
+                Il prezzo è veramente fisso?
+              </summary>
+              <div class="mt-4 opacity-80 text-sm lg:text-base">
+                <p>
+                  Sì. €1.500 per il pacchetto standard, pagabili in due rate da
+                  €750 (una all'inizio e una alla consegna). Funzionalità extra
+                  vengono preventivate prima di iniziare, nessuna sorpresa in
+                  fattura.
+                </p>
+              </div>
+            </details>
+            <details class="group border-b border-dark/10 py-6">
+              <summary
+                class="flex justify-between items-center font-heading font-bold text-lg lg:text-xl cursor-pointer list-none"
+              >
+                Posso modificare il sito da solo dopo?
+              </summary>
+              <div class="mt-4 opacity-80 text-sm lg:text-base">
+                <p>
+                  No. Il sito è consegnato come prodotto finito ad alte
+                  prestazioni. È pensato per professionisti che non vogliono
+                  perdere tempo con aggiornamenti tecnici e preferiscono un
+                  oggetto solido e definitivo.
+                </p>
+              </div>
+            </details>
+            <details class="group border-b border-dark/10 py-6">
+              <summary
+                class="flex justify-between items-center font-heading font-bold text-lg lg:text-xl cursor-pointer list-none"
+              >
+                Come comunichiamo durante il progetto?
+              </summary>
+              <div class="mt-4 opacity-80 text-sm lg:text-base">
+                <p>
+                  Via e-mail e documento condiviso. Tutto tracciato per
+                  iscritto. Nessuna call obbligatoria.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
 
-        <!-- CTA FINALE -->
-        <section id="contatti" class="final-cta volt-bg">
-            <div class="container center">
-                <h2 class="dark-text large">Il tuo prossimo cliente ti sta cercando online. Lo trova?</h2>
-                <p class="dark-text">Compila il brief. Rispondo entro 24 ore.</p>
-                <a href="#" class="btn btn-dark-xl">Inizia adesso →</a>
-            </div>
-        </section>
+      <!-- CTA FINALE -->
+      <section
+        id="contatti"
+        class="bg-volt text-dark py-32 text-center section-fade"
+      >
+        <div class="max-w-4xl mx-auto px-6">
+          <h2
+            class="font-heading font-extrabold text-4xl lg:text-6xl leading-[1.1] mb-8"
+          >
+            Il tuo prossimo cliente ti sta cercando online. Lo trova?
+          </h2>
+          <p class="text-xl lg:text-2xl font-medium mb-12">
+            Compila il brief. Rispondo entro 24 ore.
+          </p>
+          <a
+            href="#"
+            class="bg-dark text-volt font-heading font-bold text-xl lg:text-2xl px-12 py-6 inline-block hover:scale-105 transition-transform"
+            >Inizia adesso →</a
+          >
+        </div>
+      </section>
     </main>
 
-    <footer class="footer dark-bg">
-        <div class="container footer-wrapper">
-            <div class="footer-brand">SitoVetrina.it</div>
-            <div class="footer-contact">ciao@sitovetrina.it</div>
-            <div class="footer-copy">© 2026, Siti vetrina professionali per PMI</div>
+    <footer class="bg-dark py-16 border-t border-white/5">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-xs lg:text-sm opacity-60"
+      >
+        <div class="font-heading font-extrabold text-lg text-white opacity-100">
+          SitoVetrina.it
         </div>
+        <div class="font-medium">ciao@sitovetrina.it</div>
+        <div>© 2026, Siti vetrina professionali per PMI</div>
+      </div>
     </footer>
 
     <script type="module" src="graphics.js"></script>
     <script type="module" src="script.js"></script>
-</body>
+  </body>
 </html>
