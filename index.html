@@ -1,9 +1,44 @@
-<!doctype html>
-<html lang="it" class="scroll-smooth">
+﻿<!doctype html>
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Week Lab | Sito Professionale in 7 Giorni*</title>
+    <meta
+      name="description"
+      content="WeekLab realizza siti professionali in 7 giorni: UX design, sviluppo custom e supporto completo con prezzo fisso."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://www.weeklaboratory.com/" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WeekLab" />
+    <meta
+      property="og:title"
+      content="Week Lab | Sito Professionale in 7 Giorni*"
+    />
+    <meta
+      property="og:description"
+      content="Sito professionale online in 7 giorni: UX design, sviluppo custom e prezzo fisso."
+    />
+    <meta property="og:url" content="https://www.weeklaboratory.com/" />
+    <meta
+      property="og:image"
+      content="https://www.weeklaboratory.com/og-cover-weeklab.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Week Lab | Sito Professionale in 7 Giorni*"
+    />
+    <meta
+      name="twitter:description"
+      content="Sito professionale online in 7 giorni: UX design, sviluppo custom e prezzo fisso."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.weeklaboratory.com/og-cover-weeklab.jpg"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +53,36 @@
     <meta name="apple-mobile-web-app-title" content="WeekLab" />
     <link rel="manifest" href="/site.webmanifest" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "WeekLab",
+            "url": "https://www.weeklaboratory.com/",
+            "email": "ciao@ows-design.vercel.app"
+          },
+          {
+            "@type": "Service",
+            "name": "Sito Professionale in 7 Giorni",
+            "provider": {
+              "@type": "Organization",
+              "name": "WeekLab"
+            },
+            "url": "https://www.weeklaboratory.com/",
+            "areaServed": "IT",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": "1500",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        ]
+      }
+    </script>
     <script>
       tailwind.config = {
         theme: {
@@ -57,40 +121,112 @@
         font-size: 1.5rem;
       }
       details[open] summary::after {
-        content: "−";
+        content: "\2212";
+      }
+      @keyframes heroReveal {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes heroVisualIn {
+        from {
+          opacity: 0;
+          transform: translateX(22px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+        }
+      }
+      .hero-animate {
+        opacity: 0;
+        animation: heroReveal 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      .hero-delay-0 {
+        animation-delay: 0.02s;
+      }
+      .hero-delay-1 {
+        animation-delay: 0.08s;
+      }
+      .hero-delay-2 {
+        animation-delay: 0.2s;
+      }
+      .hero-delay-3 {
+        animation-delay: 0.34s;
+      }
+      .hero-delay-4 {
+        animation-delay: 0.48s;
+      }
+      .hero-delay-5 {
+        animation-delay: 0.62s;
+      }
+      .hero-delay-6 {
+        animation-delay: 0.76s;
+      }
+      .hero-visual-animate {
+        opacity: 0;
+        animation: heroVisualIn 1.05s cubic-bezier(0.25, 1, 0.5, 1) 0.28s
+          forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-animate,
+        .hero-visual-animate {
+          opacity: 1;
+          animation: none;
+        }
       }
     </style>
   </head>
-  <body class="bg-dark text-white font-body overflow-x-hidden">
+  <body id="top" class="bg-dark text-white font-body overflow-x-hidden">
     <header
       class="sticky top-0 z-50 bg-dark/95 backdrop-blur-md border-b border-white/5 py-4"
     >
       <div
-        class="lg:max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center"
+        class="max-w-7xl mx-auto px-6 flex justify-between items-center gap-4"
       >
         <a
-          href="#"
-          class="font-heading font-extrabold text-xl lg:text-2xl tracking-tight text-volt italic"
+          href="#top"
+          class="hero-animate hero-delay-0 font-heading font-extrabold text-xl lg:text-2xl tracking-tight text-volt italic"
           >WeekLab</a
         >
         <nav
           class="hidden md:flex gap-8 items-center text-sm font-medium justify-center"
         >
-          <a href="#funziona" class="hover:text-volt transition-colors"
+          <a
+            href="#funziona"
+            class="hero-animate hero-delay-1 hover:text-volt transition-colors"
             >Come funziona</a
           >
-          <a href="#include" class="hover:text-volt transition-colors"
+          <a
+            href="#include"
+            class="hero-animate hero-delay-2 hover:text-volt transition-colors"
             >Cosa include</a
           >
-          <a href="#faq" class="hover:text-volt transition-colors">FAQ</a>
-          <a href="#contatti" class="hover:text-volt transition-colors"
+          <a
+            href="#portfolio"
+            class="hero-animate hero-delay-3 hover:text-volt transition-colors"
+            >Progetti</a
+          >
+          <a
+            href="#faq"
+            class="hero-animate hero-delay-4 hover:text-volt transition-colors"
+            >FAQ</a
+          >
+          <a
+            href="#contatti"
+            class="hero-animate hero-delay-5 hover:text-volt transition-colors"
             >Contatti</a
           >
         </nav>
         <a
           href="#contatti"
-          class="bg-volt text-dark font-heading font-extrabold px-6 py-3 text-sm hover:bg-white transition-all text-center justify-self-end"
-          >Voglio il mio sito →</a
+          class="hero-animate hero-delay-6 bg-volt text-dark font-heading font-extrabold px-6 py-3 text-sm hover:bg-white transition-all text-center justify-self-end"
+          >Voglio il mio sito &rarr;</a
         >
       </div>
     </header>
@@ -102,34 +238,38 @@
       >
         <div>
           <span
-            class="text-volt font-heading font-bold text-xs tracking-[0.3em] block mb-4 uppercase"
+            class="hero-animate hero-delay-1 text-volt font-heading font-bold text-xs tracking-[0.3em] block mb-4 uppercase"
             >SITO ONLINE IN 7 GIORNI</span
           >
 
           <h1
-            class="font-heading font-extrabold text-3xl lg:text-5xl leading-tight mb-8"
+            class="hero-animate hero-delay-2 font-heading font-extrabold text-3xl lg:text-5xl leading-tight mb-8"
           >
-            Smettila di rimandare. Il tuo sito professionale esiste già, manca
+            Smettila di rimandare. Il tuo sito professionale esiste già , manca
             solo di essere costruito.
           </h1>
-          <p class="text-white/60 text-lg lg:text-xl mb-10 max-w-xl">
+          <p
+            class="hero-animate hero-delay-3 text-white/60 text-lg lg:text-xl mb-10 max-w-xl"
+          >
             €1.500 tutto incluso. Design UX, codice puro e zero sorprese. Inizia
             oggi, online in 7 giorni. Pagamento in due rate da €750.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div
+            class="hero-animate hero-delay-4 flex flex-col sm:flex-row gap-4"
+          >
             <a
               href="#contatti"
               class="bg-volt text-dark font-heading font-extrabold px-8 py-4 text-center hover:bg-white transition-all"
-              >Partiamo adesso →</a
+              >Partiamo adesso &rarr;</a
             >
             <a
               href="#funziona"
               class="border border-white/20 text-white font-heading font-bold px-8 py-4 text-center hover:bg-white hover:text-dark transition-all"
-              >Vedi come funziona ↓</a
+              >Vedi come funziona &darr;</a
             >
           </div>
         </div>
-        <div class="hidden md:block" id="hero-geo"></div>
+        <div class="hidden md:block hero-visual-animate" id="hero-geo"></div>
       </section>
 
       <!-- CREDIBILITY BAR -->
@@ -149,9 +289,9 @@
             <div class="bg-dark p-10 border-l-4 border-volt text-white">
               <span
                 class="font-heading font-extrabold text-4xl text-volt block mb-2"
-                >€1.500</span
+                >â‚¬1.500</span
               >
-              <p class="opacity-80">2 rate da €750, nessun extra nascosto</p>
+              <p class="opacity-80">2 rate da â‚¬750, nessun extra nascosto</p>
             </div>
             <div class="bg-dark p-10 border-l-4 border-volt text-white">
               <span
@@ -230,7 +370,7 @@
       <section id="include" class="bg-sand text-dark py-24 section-fade">
         <div class="max-w-7xl mx-auto px-6">
           <h2 class="font-heading font-extrabold text-4xl lg:text-5xl mb-16">
-            €1.500. Tutto incluso. Davvero.
+            â‚¬1.500. Tutto incluso. Davvero.
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div class="bg-white p-10 border border-dark/10">
@@ -241,55 +381,103 @@
                 <li
                   class="flex items-start gap-3 font-medium text-sm lg:text-base"
                 >
-                  <i
-                    data-lucide="check"
+                  <svg
                     class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
-                  ></i>
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
                   Brief guidato (modulo strutturato)
                 </li>
                 <li
                   class="flex items-start gap-3 font-medium text-sm lg:text-base"
                 >
-                  <i
-                    data-lucide="check"
+                  <svg
                     class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
-                  ></i>
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
                   Progettazione UX di struttura e contenuti
                 </li>
                 <li
                   class="flex items-start gap-3 font-medium text-sm lg:text-base"
                 >
-                  <i
-                    data-lucide="check"
+                  <svg
                     class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
-                  ></i>
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
                   Testi ottimizzati SEO (title, meta, H1, body)
                 </li>
                 <li
                   class="flex items-start gap-3 font-medium text-sm lg:text-base"
                 >
-                  <i
-                    data-lucide="check"
+                  <svg
                     class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
-                  ></i>
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
                   Sviluppo in codice (no page builder, no WordPress)
                 </li>
                 <li
                   class="flex items-start gap-3 font-medium text-sm lg:text-base"
                 >
-                  <i
-                    data-lucide="check"
+                  <svg
                     class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
-                  ></i>
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
                   1 ciclo di revisione incluso
                 </li>
                 <li
                   class="flex items-start gap-3 font-medium text-sm lg:text-base"
                 >
-                  <i
-                    data-lucide="check"
+                  <svg
                     class="text-volt w-5 h-5 flex-shrink-0 bg-dark rounded-full p-0.5"
-                  ></i>
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
                   Configurazione dominio e hosting (primo anno)
                 </li>
               </ul>
@@ -300,19 +488,19 @@
               </h3>
               <ul class="space-y-4">
                 <li class="text-sm lg:text-base font-medium opacity-60 px-2">
-                  – Logo e identità visiva
+                  â€“ Logo e identitÃ  visiva
                 </li>
                 <li class="text-sm lg:text-base font-medium opacity-60 px-2">
-                  – Fotografia professionale
+                  â€“ Fotografia professionale
                 </li>
                 <li class="text-sm lg:text-base font-medium opacity-60 px-2">
-                  – E-commerce e funzionalità avanzate
+                  â€“ E-commerce e funzionalitÃ  avanzate
                 </li>
                 <li class="text-sm lg:text-base font-medium opacity-60 px-2">
-                  – Contenuti ricorrenti e gestione social
+                  â€“ Contenuti ricorrenti e gestione social
                 </li>
                 <li class="text-sm lg:text-base font-medium opacity-60 px-2">
-                  – Manutenzione annuale con la sviluppatrice
+                  â€“ Manutenzione annuale con la sviluppatrice
                 </li>
               </ul>
             </div>
@@ -321,17 +509,17 @@
             <a
               href="#contatti"
               class="bg-rust text-white font-heading font-bold px-10 py-5 inline-block hover:scale-105 transition-transform"
-              >Richiedi il preventivo →</a
+              >Richiedi il preventivo &rarr;</a
             >
           </div>
         </div>
       </section>
 
-      <!-- PER CHI È -->
+      <!-- PER CHI Ãˆ -->
       <section class="bg-dark py-24 section-fade">
         <div class="max-w-7xl mx-auto px-6">
           <h2 class="font-heading font-extrabold text-4xl mb-16">
-            Questo servizio è per te se...
+            Questo servizio Ã¨ per te se...
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="border-2 border-volt p-10">
@@ -364,8 +552,208 @@
               </h3>
               <p class="leading-relaxed opacity-80">
                 Canva e Wix ti hanno stancato. Vuoi qualcosa che sembri fatto da
-                professionisti, perché lo è.
+                professionisti, perchÃ© lo Ã¨.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGETTI (PORTFOLIO) -->
+      <section
+        id="portfolio"
+        class="bg-dark py-20 md:py-32 section-fade overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <h2
+            class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-6xl mb-12 md:mb-20"
+          >
+            I nostri progetti.
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6 md:gap-10">
+            <!-- Project Card 1: Consulente -->
+            <div
+              class="group flex flex-col bg-white/5 border border-white/10 hover:border-volt transition-all p-6 sm:p-8 relative max-w-sm mx-auto md:max-w-none"
+            >
+              <div
+                class="aspect-[4/3] sm:aspect-square bg-dark/40 mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden"
+              >
+                <svg class="w-2/3 h-2/3 float-anim" viewBox="0 0 100 100">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="30"
+                    stroke="#c8f040"
+                    stroke-width="0.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M20,50 L80,50 M50,20 L50,80"
+                    stroke="#6b6560"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="40"
+                    y="40"
+                    width="20"
+                    height="20"
+                    fill="#c8f040"
+                    fill-opacity="0.2"
+                    stroke="#c8f040"
+                    stroke-width="1"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl mb-4">
+                Il Consulente
+              </h3>
+              <p class="text-white/70 text-sm mb-6">
+                AutoritÃ  e chiarezza. Una struttura che guida il lead verso la
+                consulenza.
+              </p>
+              <div
+                class="mt-auto flex items-center gap-2 text-volt font-bold text-xs uppercase tracking-widest"
+              >
+                <span>Case Study</span>
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Project Card 2: Ristorante -->
+            <div
+              class="group flex flex-col bg-white/5 border border-white/10 hover:border-volt transition-all p-6 sm:p-8 relative max-w-sm mx-auto md:max-w-none"
+            >
+              <div
+                class="aspect-[4/3] sm:aspect-square bg-dark/40 mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden"
+              >
+                <svg class="w-2/3 h-2/3" viewBox="0 0 100 100">
+                  <polygon
+                    points="50,10 90,90 10,90"
+                    stroke="#c8f040"
+                    stroke-width="0.5"
+                    fill="none"
+                    class="geo-rotate"
+                    style="transform-origin: center"
+                  />
+                  <circle
+                    cx="50"
+                    cy="60"
+                    r="15"
+                    fill="#c4461a"
+                    fill-opacity="0.3"
+                  />
+                  <rect
+                    x="30"
+                    y="40"
+                    width="40"
+                    height="10"
+                    stroke="#6b6560"
+                    stroke-width="0.5"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl mb-4">
+                L'Artigiano Locale
+              </h3>
+              <p class="text-white/70 text-sm mb-6">
+                Esperienza tattile digitale. Focus sulla qualitÃ  del lavoro e
+                sulla storia.
+              </p>
+              <div
+                class="mt-auto flex items-center gap-2 text-volt font-bold text-xs uppercase tracking-widest"
+              >
+                <span>Live Site</span>
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Project Card 3: Studio -->
+            <div
+              class="group flex flex-col bg-white/5 border border-white/10 hover:border-volt transition-all p-6 sm:p-8 relative max-w-sm mx-auto md:max-w-none"
+            >
+              <div
+                class="aspect-[4/3] sm:aspect-square bg-dark/40 mb-6 sm:mb-8 flex items-center justify-center relative overflow-hidden"
+              >
+                <svg class="w-2/3 h-2/3 float-anim" viewBox="0 0 100 100">
+                  <rect
+                    x="20"
+                    y="20"
+                    width="60"
+                    height="60"
+                    stroke="#6b6560"
+                    stroke-width="0.5"
+                    fill="none"
+                  />
+                  <rect
+                    x="25"
+                    y="25"
+                    width="50"
+                    height="50"
+                    stroke="#c8f040"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <line
+                    x1="10"
+                    y1="50"
+                    x2="90"
+                    y2="50"
+                    stroke="#c4461a"
+                    stroke-width="0.5"
+                    stroke-dasharray="2 2"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl mb-4">
+                Lo Studio Professionale
+              </h3>
+              <p class="text-white/70 text-sm mb-6">
+                Minimalismo e rigore. Progettato per trasmettere fiducia
+                istantanea.
+              </p>
+              <div
+                class="mt-auto flex items-center gap-2 text-volt font-bold text-xs uppercase tracking-widest"
+              >
+                <span>Case Study</span>
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -387,7 +775,7 @@
               <div class="mt-4 opacity-80 text-sm lg:text-base">
                 <p>
                   7 giorni lavorativi dal brief completo, a patto che foto e
-                  testi siano già pronti. Se mancano materiali, i tempi si
+                  testi siano giÃ  pronti. Se mancano materiali, i tempi si
                   allungano, ma te lo diciamo subito.
                 </p>
               </div>
@@ -401,7 +789,7 @@
               <div class="mt-4 opacity-80 text-sm lg:text-base">
                 <p>
                   Nessun problema. Puoi partire con un logotipo tipografico
-                  incluso. Il logo come identità visiva è quotato a parte.
+                  incluso. Il logo come identitÃ  visiva Ã¨ quotato a parte.
                 </p>
               </div>
             </details>
@@ -409,14 +797,14 @@
               <summary
                 class="flex justify-between items-center font-heading font-bold text-lg lg:text-xl cursor-pointer list-none"
               >
-                Il prezzo è veramente fisso?
+                Il prezzo Ã¨ veramente fisso?
               </summary>
               <div class="mt-4 opacity-80 text-sm lg:text-base">
                 <p>
-                  Sì. €1.500 per il pacchetto standard, pagabili in due rate da
-                  €750 (una all'inizio e una alla consegna). Funzionalità extra
-                  vengono preventivate prima di iniziare, nessuna sorpresa in
-                  fattura.
+                  SÃ¬. â‚¬1.500 per il pacchetto standard, pagabili in due rate
+                  da â‚¬750 (una all'inizio e una alla consegna). FunzionalitÃ 
+                  extra vengono preventivate prima di iniziare, nessuna sorpresa
+                  in fattura.
                 </p>
               </div>
             </details>
@@ -428,8 +816,8 @@
               </summary>
               <div class="mt-4 opacity-80 text-sm lg:text-base">
                 <p>
-                  No. Il sito è consegnato come prodotto finito ad alte
-                  prestazioni. È pensato per professionisti che non vogliono
+                  No. Il sito Ã¨ consegnato come prodotto finito ad alte
+                  prestazioni. Ãˆ pensato per professionisti che non vogliono
                   perdere tempo con aggiornamenti tecnici e preferiscono un
                   oggetto solido e definitivo.
                 </p>
@@ -467,9 +855,9 @@
             Compila il brief. Rispondo entro 24 ore.
           </p>
           <a
-            href="#"
+            href="mailto:ciao@ows-design.vercel.app?subject=Brief%20WeekLab"
             class="bg-dark text-volt font-heading font-bold text-xl lg:text-2xl px-12 py-6 inline-block hover:scale-105 transition-transform"
-            >Inizia adesso →</a
+            >Inizia adesso &rarr;</a
           >
         </div>
       </section>
